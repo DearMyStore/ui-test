@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String sessionPassword = (String) session.getAttribute("password");
+    String sessionUsername = (String) session.getAttribute("username");
+    boolean deleted = false;
+
+    if ("POST".equalsIgnoreCase(request.getMethod())) {
+        String inputPassword = request.getParameter("password");
+
+        if (sessionPassword != null && sessionPassword.equals(inputPassword)) {
+            session.invalidate(); // 세션 삭제
+            deleted = true;
+        }
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원 탈퇴</title>
+</head>
+<body>
+<% if (deleted) { %>
+    <h3>회원 탈퇴가 완료되었습니다.</h3>
+    <a href="register.jsp">다시 가입하기</a>
+<% } else if ("POST".equalsIgnoreCase(request.getMethod())) { %>
+    <h3>비밀번호가 일치하지 않습니다.</h3>
+    <a href="deleteAccount.jsp">돌아가기</a>
+<% } else { %>
+    <h2><%= sessionUsername %>님의 계정을 삭제하려면 비밀번호를 입력하세요</h2>
+    <form method="post">
+        비밀번호: <input type="password" name="password" required><br>
+        <input type="submit" value="탈퇴하기">
+    </form>
+<% } %>
+</body>
+</html>

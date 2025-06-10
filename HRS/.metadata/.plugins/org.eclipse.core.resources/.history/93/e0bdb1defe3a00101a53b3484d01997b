@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String name = (String) session.getAttribute("name");
+    if (name == null) {
+        response.sendRedirect("register.jsp");
+        return;
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>환영합니다</title>
+</head>
+<body>
+    <h2><%= name %>님, 환영합니다!</h2>
+    <form action="deleteAccount.jsp" method="get">
+        <input type="submit" value="회원 탈퇴">
+    </form>
+</body>
+</html>

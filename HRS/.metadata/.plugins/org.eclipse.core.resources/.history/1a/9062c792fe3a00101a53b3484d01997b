@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    if ("POST".equalsIgnoreCase(request.getMethod())) {
+        String name = request.getParameter("name");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        session.setAttribute("name", name);
+        session.setAttribute("username", username);
+        session.setAttribute("password", password);
+
+        response.sendRedirect("welcome.jsp");
+        return;
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form method="post">
+        이름: <input type="text" name="name" required><br>
+        아이디: <input type="text" name="username" required><br>
+        비밀번호: <input type="password" name="password" required><br>
+        <input type="submit" value="가입하기">
+    </form>
+</body>
+</html>

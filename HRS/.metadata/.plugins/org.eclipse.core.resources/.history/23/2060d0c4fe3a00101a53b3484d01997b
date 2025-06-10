@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String name = (String) session.getAttribute("name");
+    if (name == null) {
+        response.sendRedirect("register.jsp");
+        return;
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>가입 완료</title>
+</head>
+<body>
+    <h2><%= name %>님, 회원가입이 완료되었습니다!</h2>
+    <a href="menu.jsp">← 메뉴로 돌아가기</a>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    if ("POST".equalsIgnoreCase(request.getMethod())) {
+        session.setAttribute("name", request.getParameter("name"));
+        session.setAttribute("username", request.getParameter("username"));
+        session.setAttribute("password", request.getParameter("password"));
+        response.sendRedirect("registerSuccess.jsp");
+        return;
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <style>
+     body { font-family: Arial, sans-serif; margin: 50px; }
+        form { max-width: 400px; margin: auto; }
+        label { display: block; margin-top: 15px; }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%; padding: 8px; margin-top: 5px;
+        }
+        input[type="submit"] {
+            margin-top: 20px; padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form method="post">
+    
+        <label for="name">이름:</label>
+         <input type="text" name="name" required><br>
+        아이디: <input type="text" name="username" required><br>
+        비밀번호: <input type="password" name="password" required><br>
+        <input type="submit" value="가입하기">
+    </form>
+    <br>
+    <a href="menu.jsp">← 메뉴로 돌아가기</a>
+</body>
+</html>
