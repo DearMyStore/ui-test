@@ -23,41 +23,7 @@
             padding: 30px;
             border-radius: 10px;
             display: inline-block;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-        }
-        img.logo {
-            width: 200px;
-        }
-        img.room {
-            width: 200px;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 15px 0;
-        }
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #444444;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.2s ease;
-        }
-        a:hover {
-            background-color: #222222;
-        }
-    </style>
-</head>
-<body>
-    <img src="images/hotel.jpg" alt="호텔 로고" class="logo">
-    <h1>출석 회원가입 시스템</h1>
+       텔 회원가입 시스템</h1>
     <ul>
         <li><a href="register.jsp">회원가입</a></li>
         <li><a href="deleteAccount.jsp">회원 탈퇴</a></li>
