@@ -23,7 +23,7 @@
             padding: 30px;
             border-radius: 10px;
             display: inline-block;
-       텔 회원가입 시스템</h1>
+        <h1>호텔 회원가입 시스템</h1>
     <ul>
         <li><a href="register.jsp">회원가입</a></li>
         <li><a href="deleteAccount.jsp">회원 탈퇴</a></li>
